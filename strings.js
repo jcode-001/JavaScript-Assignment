@@ -3,8 +3,8 @@
 
 /* 020. Ask the user to enter their first name and 
 then display the length of their name*/
-const name = prompt("First name");
-console.log(name.length);
+const userName = prompt("Please enter your first name: ", "Bryan");
+console.log(userName.length);
 
 /* 021. Ask the user to enter their first name and then ask them to
 enter their surname. Join them together with a space between

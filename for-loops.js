@@ -34,7 +34,9 @@ number of times they entered.
 const userName2 = prompt("Enter your name");
 const times = Number(prompt("Enter a number"));
 for (let i = 0; i < times; i++) {
-  console.log(userName[i]);
+  for (let j = 0; j < userName2.length; j++) {
+    console.log(userName[j]);
+  }
 }
 
 /*039. Ask the user to enter a number between 1 and 12 and 
@@ -43,7 +45,7 @@ then display the times table for that number.
 const number = Number(prompt("Enter a number btw 1 and 12"));
 let k = 1;
 for (k; k < 13; k++) {
-  console.log(number + " * " + k + " = " + number * k);
+  console.log(`${number} * ${k} = ${number * k}`);
 }
 
 /*040. Ask for a number below 50 and then count down from 50 to 
@@ -66,7 +68,7 @@ if (usernumber < 10) {
     console.log(username3);
   }
 } else {
-  for (let q = 0; q < 4; q++) {
+  for (let q = 0; q < 3; q++) {
     console.log("Too high!");
   }
 }
@@ -76,13 +78,15 @@ numbers and after each input ask them if they want that number included.
 If they do, then add the number to the total. If they do not want it included,
 don’t add it to the total. After they have entered all five numbers, display the total. 
 */
-let toatal = 0;
-for (let w = 0; w < 6; w++) {
+let total = 0;
+for (let w = 0; w < 5; w++) {
   let fiveNum = Number(prompt("Enter a number"));
-  confirm("Do you want that nhumber be included?");
-  if (confirm) {
+  let answer = prompt("Do you want that number be included?");
+  if (answer === "yes") {
     total += fiveNum;
+    console.log("Total:" + total);
   } else {
+    console.log("error!/");
   }
 }
 console.log("Total:" + total);
@@ -93,15 +97,15 @@ them to enter a number below 20 and then count down from 20 to that number. If t
 entered something other than up or down, display the message “I don’t understand”. 
 */
 let userDirection = prompt("Are you counting up or down? ");
-if (userDirection === "Up" || userDirection === "up") {
+if (userDirection.toLowerCase() === "up") {
   let topNum = Number(prompt("What is the top nuber? "));
-  for (let index = 1; index <= topNum; index++) {
-    console.log(index);
+  for (let x = 1; x <= topNum; x++) {
+    console.log(x);
   }
-} else if (userDirection === "down") {
+} else if (userDirection.toLowerCase() === "down") {
   let below20 = Number(prompt("Enter a number below 20"));
-  for (let index = 20; index > below20; index--) {
-    console.log(index);
+  for (let y = 20; y >= below20; y--) {
+    console.log(y);
   }
 } else {
   console.log("I don't understand");
@@ -114,8 +118,8 @@ enter a number which is 10 or higher, display the message “Too many people”.
 let partyNo = Number(prompt("How many people are you inviting to the party?"));
 if (partyNo < 10) {
   for (i = 0; i < partyNo; i++) {
-    let invitees = prompt("Enter their names");
-    console.log(`${invitees} has been invited`);
+    let guest = prompt("Enter their names");
+    console.log(`${guest} has been invited`);
   }
 } else if (partyNo >= 10) {
   console.log("Too many people");
@@ -134,7 +138,7 @@ for (let k = 0; k < 11; k++) {
 //BONUS 02
 let r = 0;
 while (r) {
-  alert(`Number ${i}!`);
+  alert(`Number ${r}!`);
   r++;
 }
 
@@ -147,7 +151,7 @@ while (true) {
 }
 
 //BONUS 04
-"use strict";
+("use strict");
 for (let l = 2; l < 10; l++) {
   if (l % 2 !== 0) {
     console.log(l);

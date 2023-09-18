@@ -17,12 +17,11 @@ console.log("The total is", total);
 a value over 5 and then display the message “The last number
 you entered was a [number]” and stop the program. 
 */
-// let inputNumber2 = Number(prompt("Enter a number"));
 while (true) {
   let inputNumber2 = Number(prompt("Enter a number"));
   if (inputNumber2 >= 5) {
     let bigNum = inputNumber2;
-    console.log(`The last number you entered was ${bigNum}`);
+    console.log(`The last number you entered was a ${bigNum}`);
     break;
   }
 }
@@ -37,15 +36,29 @@ let firstNum = Number(prompt("Enter a number"));
 let secondNum = Number(prompt("Enter another number"));
 let total2 = firstNum + secondNum;
 let question = prompt("Do you want to add another number? ");
-if (question) {
-  while (question === "y") {
-    let newNum = Number(prompt("Enter the  number? "));
+if (question === "y") {
+  while (true) {
+    let newNum = Number(prompt("Enter a number? "));
     let question = prompt("Do you want to add another number? ");
     total2 += newNum;
     if (question === "") break;
   }
 }
 console.log(total2);
+
+/** let total2 = 0;
+    let firstNum = Number(prompt("Enter a number? "));
+    let secondNum = Number(prompt("Enter another number"));
+total2 = firstNum + secondNum;
+while (true) {
+    let answer = prompt("Do you want to add another number? ");
+    if(answer === "y") {
+      let newNum = Number(prompt("Enter a number? "));
+        total2 += newNum;
+    }
+    if (answer === "") break;
+  }
+console.log(total2); */
 
 /*048. Ask for the name of somebody the user wants to invite to a
 party. After this, display the message “[name] has now been invited” 
@@ -65,7 +78,11 @@ while (true) {
     counter += 1;
   } else if (question2 === "no") break;
 }
-console.log(`${counter} persons were invited to the party.`);
+console.log(
+  `${counter} ${
+    counter > 1 ? "persons were" : "person was"
+  } invited to the party.`
+);
 
 /*049. Create a variable called compnum and set the value to 50.
 Ask the user to enter a number. While their guess is not the same as
